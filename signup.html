@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #f0f2f5; /* light background color */
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+    
+    /* Style the form as a card */
+    #signupForm {
+        width: 300px;
+        padding: 20px;
+        background-color:transparent; /* card background color */
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* card shadow */
+        border-radius: 8px; /* rounded corners */
+        text-align: center; /* center content within form */
+        backdrop-filter: blur(3px);
+    }
+    
+    #signupForm label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #333;
+    }
+    
+    #signupForm input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    
+    #signupForm button {
+        width: 100%;
+        padding: 10px;
+        background-color: #4CAF50; /* button background color */
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    
+    #signupForm button:hover {
+        background-color: #45a049;
+    }
+    body{
+        background-image: url(/background\ image.webp);
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+    <h2>Sign Up</h2>
+    <form id="signupForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br>
+
+        <label for="email" id="email1">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Sign Up</button>
+        <div>Already Have a Account? <a href="/login.html">Login Here</a>  </div>
+    </form>
+</div>
+
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from refreshing the page
+
+            const formData = {
+                username: document.getElementById('username').value,
+                email: document.getElementById('email').value,
+                password: document.getElementById('password').value
+            };
+
+            // Simulate form submission
+            console.log('User signed up:', formData);
+
+            // Redirect to the login page after sign up
+            window.location.href = 'login.html';
+        });
+    </script>
+</body>
+</html>
